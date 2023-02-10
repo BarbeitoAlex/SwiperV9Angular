@@ -12,6 +12,8 @@ import { ScriptService } from './script.service';
 
 import { register } from 'swiper/element/bundle';
 
+import { isScullyRunning } from '@scullyio/ng-lib';
+
 @Directive({
   selector: 'swiper-container',
 })
@@ -28,14 +30,19 @@ export class SwiperDirective implements AfterViewInit {
 
   @Output() onSwiper = new EventEmitter<Swiper>();
 
+  isScullyRunning = false;
+
   constructor(
     private readonly el: ElementRef<HTMLElement>,
     private readonly $script: ScriptService
   ) {
+    this.isScullyRunning = isScullyRunning();
     this.swiperElement = el.nativeElement;
   }
 
   ngAfterViewInit() {
+    if (this.isScullyRunning) this.createScullyPlaceholder();
+
     this.$script.load(this.SWIPER_SCRIPT).then(() => {
       this.loadRegister();
 
@@ -61,5 +68,15 @@ export class SwiperDirective implements AfterViewInit {
       register();
       this.loadedRegister = true;
     }
+  }
+
+  createScullyPlaceholder() {
+    const placeholder = document.createElement('div');
+    placeholder.classList.add('scully-swiper-placeholder');
+    const preload = document.createElement('div');
+    preload.classList.add('swiper-lazy-preloader');
+    placeholder.append(preload);
+    this.swiperElement.append(placeholder);
+    this.swiperElement.classList.add('scully-swiper');
   }
 }
