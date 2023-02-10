@@ -12,7 +12,7 @@ import { ScriptService } from './script.service';
 
 import { register } from 'swiper/element/bundle';
 
-import { isScullyRunning } from '@scullyio/ng-lib';
+import { isScullyRunning, isScullyGenerated } from '@scullyio/ng-lib';
 
 @Directive({
   selector: 'swiper-container',
@@ -31,17 +31,20 @@ export class SwiperDirective implements AfterViewInit {
   @Output() onSwiper = new EventEmitter<Swiper>();
 
   isScullyRunning = false;
+  isScullyGenerated = false;
 
   constructor(
     private readonly el: ElementRef<HTMLElement>,
     private readonly $script: ScriptService
   ) {
     this.isScullyRunning = isScullyRunning();
+    this.isScullyGenerated = isScullyGenerated();
     this.swiperElement = el.nativeElement;
   }
 
   ngAfterViewInit() {
     if (this.isScullyRunning) this.createScullyPlaceholder();
+    if (this.isScullyGenerated) this.generatedFromHTML();
 
     this.$script.load(this.SWIPER_SCRIPT).then(() => {
       this.loadRegister();
@@ -77,6 +80,15 @@ export class SwiperDirective implements AfterViewInit {
     preload.classList.add('swiper-lazy-preloader');
     placeholder.append(preload);
     this.swiperElement.append(placeholder);
+    this.swiperElement.classList.add(
+      'scully-swiper',
+      'scully-swiper-isRunning'
+    );
+  }
+
+  generatedFromHTML() {
     this.swiperElement.classList.add('scully-swiper');
+    const slides = this.swiperElement.querySelectorAll('swiper-slide');
+    slides.forEach((s) => s.classList.add('fade-in'));
   }
 }

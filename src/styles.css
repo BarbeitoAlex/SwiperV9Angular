@@ -49,13 +49,34 @@ img {
   object-fit: cover;
 }
 
-.scully-swiper > *:not(.scully-swiper-placeholder) {
+.scully-swiper {
+  min-height: var(--scullySwiperMinHeight, 120px);
+}
+
+.scully-swiper-isRunning {
+  height: var(--scullySwiperMinHeight, 120px);
+}
+
+.scully-swiper-isRunning > *:not(.scully-swiper-placeholder) {
   display: none !important;
 }
 
 .scully-swiper-placeholder {
   position: relative;
   width: 100%;
-  height: 120px;
+  height: 100%;
   background-color: transparent;
+}
+
+.fade-in {
+  animation: fadeIn 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
