@@ -12,7 +12,7 @@ To modify the scully placeholder sice use css rules and change the *--scullySwip
 
 **npm run build**: to build the Angular app.
 
-**npm run scully**: to build the jamstack version.
+**npm run scully**: to build the jamstack from the generated from the Angular build.
 
 **npm run scully:build**: do the Anuglar and Scully build.
 
