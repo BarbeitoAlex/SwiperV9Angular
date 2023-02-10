@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "scully": "scully build",
+    "scully:build": "ng build && scully build --project SwiperV9Angular",
+    "scully:serve": "scully serve",
+    "scully:watch": "ng build && scully build --project SwiperV9Angular --watch"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
     "@scullyio/init": "^2.1.41",
+    "@scullyio/scully-plugin-puppeteer": "^2.1.41",
     "rxjs": "~7.8.0",
     "swiper": "^9.0.4",
     "tslib": "^2.3.0",
