@@ -1,4 +1,4 @@
-swiper-slide {
+swiper-slide.case-text {
   text-align: center;
   font-size: 18px;
   background: #fff;
@@ -8,38 +8,43 @@ swiper-slide {
   height: 120px;
 }
 
-swiper-slide[data-swiper-slide-index="0"] {
+swiper-slide.case-text[data-swiper-slide-index="0"] {
   background-color: goldenrod;
 }
 
-swiper-slide[data-swiper-slide-index="1"] {
+swiper-slide.case-text[data-swiper-slide-index="1"] {
   background-color: aquamarine;
 }
 
-swiper-slide[data-swiper-slide-index="2"] {
+swiper-slide.case-text[data-swiper-slide-index="2"] {
   background-color: blueviolet;
 }
 
-swiper-slide[data-swiper-slide-index="3"] {
+swiper-slide.case-text[data-swiper-slide-index="3"] {
   background-color: brown;
 }
 
-swiper-slide[data-swiper-slide-index="4"] {
+swiper-slide.case-text[data-swiper-slide-index="4"] {
   background-color: cadetblue;
 }
 
-swiper-slide[data-swiper-slide-index="5"] {
+swiper-slide.case-text[data-swiper-slide-index="5"] {
   background-color: crimson;
 }
 
-swiper-slide[data-swiper-slide-index="6"] {
+swiper-slide.case-text[data-swiper-slide-index="6"] {
   background-color: darkgoldenrod;
 }
 
-swiper-slide[data-swiper-slide-index="7"] {
+swiper-slide.case-text[data-swiper-slide-index="7"] {
   background-color: darksalmon;
 }
 
-swiper-slide[data-swiper-slide-index="8"] {
+swiper-slide.case-text[data-swiper-slide-index="8"] {
   background-color: darkolivegreen;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
 }
