@@ -1,0 +1,45 @@
+swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+}
+
+swiper-slide[data-swiper-slide-index="0"] {
+  background-color: goldenrod;
+}
+
+swiper-slide[data-swiper-slide-index="1"] {
+  background-color: aquamarine;
+}
+
+swiper-slide[data-swiper-slide-index="2"] {
+  background-color: blueviolet;
+}
+
+swiper-slide[data-swiper-slide-index="3"] {
+  background-color: brown;
+}
+
+swiper-slide[data-swiper-slide-index="4"] {
+  background-color: cadetblue;
+}
+
+swiper-slide[data-swiper-slide-index="5"] {
+  background-color: crimson;
+}
+
+swiper-slide[data-swiper-slide-index="6"] {
+  background-color: darkgoldenrod;
+}
+
+swiper-slide[data-swiper-slide-index="7"] {
+  background-color: darksalmon;
+}
+
+swiper-slide[data-swiper-slide-index="8"] {
+  background-color: darkolivegreen;
+}
