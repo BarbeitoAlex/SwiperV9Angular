@@ -1,4 +1,11 @@
-import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
+import {
+  AfterViewInit,
+  Directive,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import Swiper from 'swiper';
 import { SwiperOptions } from 'swiper/types/swiper-options';
 import { ScriptService } from './script.service';
@@ -18,6 +25,8 @@ export class SwiperDirective implements AfterViewInit {
   @Input() config!: SwiperOptions;
 
   loadedRegister = false;
+
+  @Output() onSwiper = new EventEmitter<Swiper>();
 
   constructor(
     private readonly el: ElementRef<HTMLElement>,
@@ -42,6 +51,7 @@ export class SwiperDirective implements AfterViewInit {
   initListeners() {
     this.swiperElement.addEventListener('init', ({ detail, target }: any) => {
       this.swiper = detail[0];
+      this.onSwiper.next(this.swiper);
       console.log(this.swiper);
     });
   }
