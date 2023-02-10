@@ -34,6 +34,24 @@ export class AppComponent {
     this.createPexelsImg('128817', 700),
   ];
 
+  imageSet3 = [
+    [this.createPexelsImg('584165', 400), this.createPexelsImg('584165', 700)],
+    [
+      this.createPexelsImg('1618659', 400),
+      this.createPexelsImg('1618659', 700),
+    ],
+    [this.createPexelsImg('325946', 400), this.createPexelsImg('325946', 700)],
+    [this.createPexelsImg('321899', 400), this.createPexelsImg('321899', 700)],
+    [
+      this.createPexelsImg('1695717', 400),
+      this.createPexelsImg('1695717', 700),
+    ],
+    [this.createPexelsImg('751687', 400), this.createPexelsImg('751687', 700)],
+    [this.createPexelsImg('751689', 400), this.createPexelsImg('751689', 700)],
+    [this.createPexelsImg('321535', 400), this.createPexelsImg('321535', 700)],
+    [this.createPexelsImg('312826', 400), this.createPexelsImg('312826', 700)],
+  ];
+
   createPexelsImg(id: string, width: number) {
     const BASE_URL =
       'https://images.pexels.com/photos/###/pexels-photo-###.jpeg?auto=compress&cs=tinysrgb&w=$$$';

@@ -65,3 +65,34 @@
     />
   </swiper-slide>
 </swiper-container>
+
+<h3>Picture case</h3>
+
+<p>This case don't need the width and height attribute</p>
+
+<swiper-container
+  init="false"
+  loop="true"
+  space-between="30"
+  slides-per-view="3.4"
+  centered-slides="true"
+  initial-slide="1"
+  loopedSlides="4"
+>
+  <swiper-slide
+    class="case-img"
+    *ngFor="let imgArr of imageSet3; let i = index"
+    lazy="true"
+  >
+    <picture>
+      <source media="(min-width: 992px)" [srcset]="imgArr[1]" />
+      <img
+        [src]="imgArr[0]"
+        alt="'image to test"
+        [attr.data.index]="i"
+        loading="lazy"
+      />
+      <!-- 400 x 268 -->
+    </picture>
+  </swiper-slide>
+</swiper-container>
