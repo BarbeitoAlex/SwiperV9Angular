@@ -22,7 +22,7 @@ export class SwiperDirective implements AfterViewInit {
   private swiper!: Swiper;
 
   private readonly SWIPER_SCRIPT =
-    'https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js';
+    'https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js';
 
   @Input() config!: /*SwiperOptions*/ any;
 
