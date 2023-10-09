@@ -7,7 +7,7 @@ import {
   Output,
 } from '@angular/core';
 import Swiper from 'swiper';
-import { SwiperOptions } from 'swiper/types/swiper-options';
+// import { SwiperOptions } from 'swiper/types';
 import { ScriptService } from './script.service';
 
 import { register } from 'swiper/element/bundle';
@@ -24,7 +24,7 @@ export class SwiperDirective implements AfterViewInit {
   private readonly SWIPER_SCRIPT =
     'https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js';
 
-  @Input() config!: SwiperOptions;
+  @Input() config!: /*SwiperOptions*/ any;
 
   loadedRegister = false;
 
