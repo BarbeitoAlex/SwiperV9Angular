@@ -37,8 +37,8 @@ export class SwiperDirective implements AfterViewInit {
     private readonly el: ElementRef<HTMLElement>,
     private readonly $script: ScriptService
   ) {
-    this.isScullyRunning = isScullyRunning();
-    this.isScullyGenerated = isScullyGenerated();
+    // this.isScullyRunning = isScullyRunning();
+    // this.isScullyGenerated = isScullyGenerated();
     this.swiperElement = el.nativeElement;
   }
 
